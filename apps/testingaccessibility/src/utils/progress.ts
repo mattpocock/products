@@ -1,3 +1,4 @@
+import {SanityDocument} from '@sanity/client'
 import {createClient} from '@supabase/supabase-js'
 import axios from 'axios'
 
@@ -31,3 +32,52 @@ export const getProgressForUser = async () =>
       console.debug('progress loaded! ✔️', data)
       return data
     })
+
+export const getProgressForSection = (
+  completedLessons: string[],
+  sectionLessons: SanityDocument[],
+) => {
+  if (!completedLessons || !sectionLessons) {
+    return {}
+  }
+  const sectionLessonsSlugs: string[] = sectionLessons.map(({slug}) => slug)
+  const completedLessonsInSection = completedLessons.filter((lesson) =>
+    sectionLessonsSlugs.includes(lesson),
+  )
+  const isSectionCompleted =
+    sectionLessons.length === completedLessonsInSection.length
+
+  return {
+    completedLessons: completedLessonsInSection,
+    isSectionCompleted,
+  }
+}
+
+export const getProgressForModule = (
+  completedLessons: string[],
+  moduleSections: SanityDocument[],
+) => {
+  if (!completedLessons || !moduleSections) {
+    return {}
+  }
+
+  let completedSectionsInModule: string[] = []
+
+  moduleSections.forEach((section) => {
+    const {isSectionCompleted} = getProgressForSection(
+      completedLessons,
+      section.lessons,
+    )
+    if (isSectionCompleted) {
+      return completedSectionsInModule.push(section.slug)
+    }
+  })
+
+  const isModuleCompleted =
+    moduleSections.length === completedSectionsInModule.length
+
+  return {
+    completedSections: completedSectionsInModule,
+    isModuleCompleted,
+  }
+}

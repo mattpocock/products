@@ -155,7 +155,7 @@ const LessonTemplate: React.FC<LessonTemplateProps> = ({
               </VideoProvider>
             </div>
           </article>
-          <div className="py-16">
+          <div className="pb-16">
             <ProgressToggle />
           </div>
         </main>
