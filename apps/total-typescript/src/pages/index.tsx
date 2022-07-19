@@ -12,17 +12,17 @@ const HomePage = () => {
   return (
     <>
       <Head>
-        <title>Advanced TypeScript</title>
+        <title>Total TypeScript</title>
         <meta
           name="description"
           content={`Learn the tricks open-source libraries use to build dynamic, robust types.`}
         />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://advancedtypescript.dev`} />
+        <meta property="og:url" content={`https://totaltypescript.com`} />
         <meta
           property="og:title"
-          content={`Advanced TypeScript - Become a TS Wizard`}
+          content={`Total TypeScript - Become a TS Wizard`}
         />
         <meta
           property="og:description"
@@ -30,24 +30,24 @@ const HomePage = () => {
         />
         <meta
           property="og:image"
-          content={`https://advancedtypescript.dev/og-image.png`}
+          content={`https://totaltypescript.com/og-image.png`}
         />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:image"
-          content={`https://advancedtypescript.dev/og-image.png`}
+          content={`https://totaltypescript.com/og-image.png`}
         />
         <meta
           name="twitter:title"
-          content={`Advanced TypeScript - Become a TS Wizard`}
+          content={`Total TypeScript - Become a TS Wizard`}
         />
         <meta
           name="twitter:description"
           content={`Learn the tricks open-source libraries use to build dynamic, robust types.`}
         />
-        <meta property="twitter:domain" content="advancedtypescript.dev" />
-        <meta property="twitter:url" content="https://advancedtypescript.dev" />
+        <meta property="twitter:domain" content="totaltypescript.com" />
+        <meta property="twitter:url" content="https://totaltypescript.com" />
       </Head>
       <main>
         <div className="flex overflow-hidden">
@@ -58,7 +58,7 @@ const HomePage = () => {
               Live Workshop
             </p>
             <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
-              Advanced TypeScript
+              Total TypeScript
             </h1>
             <h2 className="max-w-lg mx-auto text-lg text-gray-700 sm:leading-8 sm:text-xl">
               Become a{' '}
